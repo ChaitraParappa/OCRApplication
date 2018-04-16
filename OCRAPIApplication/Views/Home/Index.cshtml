@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="jumbotron">
+    <h4>Please upload the file </h4>
+    <br/>
+    <div>
+        <table>
+            <tr><td><input type="file" name="file" id="file" /></td><td><input type="submit" value="upload" /></td></tr>
+        </table>
+    </div>
+    
+</div>
+}
+
