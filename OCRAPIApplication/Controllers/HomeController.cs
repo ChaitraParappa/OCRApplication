@@ -50,6 +50,7 @@ namespace OCRAPIApplication.Controllers
 
         private void WritingContentsToFile(HttpPostedFileBase file,string result)
         {
+			string File;
             string fileName = file.FileName + ".txt";
             file.SaveAs(Path.Combine(Server.MapPath("~/App_Data/Files"), fileName));
             string filePathOfText = Path.Combine(Server.MapPath("~/App_Data/Files"), fileName);
@@ -57,6 +58,7 @@ namespace OCRAPIApplication.Controllers
             StreamWriter writer = new StreamWriter(fs1);
             writer.Write(result);
             writer.Close();
+
         }
     }
 }
